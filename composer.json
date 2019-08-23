@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Convenia\\GraphQL\\": "src/"
+            "Rebing\\GraphQL\\": "src/"
         }
     },
     "autoload-dev": {
@@ -39,10 +39,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Convenia\\GraphQL\\GraphQLServiceProvider"
+                "Rebing\\GraphQL\\GraphQLServiceProvider"
             ],
             "aliases": {
-                "GraphQL": "Convenia\\GraphQL\\Support\\Facades\\GraphQL"
+                "GraphQL": "Rebing\\GraphQL\\Support\\Facades\\GraphQL"
             }
         }
     },
