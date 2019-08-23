@@ -4,27 +4,6 @@
     "keywords": ["framework", "laravel", "graphql", "react", "convenia"],
     "authors": [
         {
-            "name": "Rebing OÜ",
-            "homepage": "http://www.rebing.ee",
-            "role": "Company"
-        },
-        {
-            "name": "Mikk Mihkel Nurges",
-            "email": "mikk.nurges@rebing.ee",
-            "role": "Developer"
-        },
-        {
-            "name": "Folklore",
-            "email": "info@atelierfolklore.ca",
-            "homepage": "http://atelierfolklore.ca"
-        },
-        {
-            "name": "David Mongeau-Petitpas",
-            "email": "dmp@atelierfolklore.ca",
-            "homepage": "http://mongo.ca",
-            "role": "Developer"
-        },
-        {
             "name": "Henrique Duarte",
             "email": "henrique.duarte@convenia.com.br",
             "role": "Developer"
