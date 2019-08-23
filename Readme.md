@@ -1,4 +1,7 @@
-# Laravel GraphQL
+# Laravel GraphQL - Fork of Rebing/graphql-laravel
+
+## This repository is a fork of Rebing/graphql-laravel
+This fork was needed because the original manteiner did a **breaking change** without follow **semver**, with made our apps be stuck at **V1.17.3** version. With this fork we can fix some issues at the **V1.17.3**  version.
 
 [![Latest Stable Version](https://poser.pugx.org/rebing/graphql-laravel/v/stable)](https://packagist.org/packages/rebing/graphql-laravel)
 [![License](https://poser.pugx.org/rebing/graphql-laravel/license)](https://packagist.org/packages/rebing/graphql-laravel)
