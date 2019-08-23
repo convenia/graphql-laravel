@@ -1,7 +1,7 @@
 {
-    "name": "rebing/graphql-laravel",
+    "name": "convenia/graphql-laravel",
     "description": "Laravel wrapper for PHP GraphQL",
-    "keywords": ["framework", "laravel", "graphql", "react"],
+    "keywords": ["framework", "laravel", "graphql", "react", "convenia"],
     "authors": [
         {
             "name": "Rebing OÜ",
@@ -22,6 +22,16 @@
             "name": "David Mongeau-Petitpas",
             "email": "dmp@atelierfolklore.ca",
             "homepage": "http://mongo.ca",
+            "role": "Developer"
+        },
+        {
+            "name": "Henrique Duarte",
+            "email": "henrique.duarte@convenia.com.br",
+            "role": "Developer"
+        },
+        {
+            "name": "Victor Gomes Gazotti",
+            "email": "victor.gomes@convenia.com.br",
             "role": "Developer"
         }
     ],
