@@ -68,13 +68,18 @@ class SelectFields {
         self::handleFields($requestedFields, $parentType, $select, $with);
 
         // If a primary key is given, but not in the selects, add it
-        if( ! is_null($primaryKey))
+        if (!is_null($primaryKey))
         {
-            $primaryKey = $parentTable ? ($parentTable . '.' . $primaryKey) : $primaryKey;
-
-            if( ! in_array($primaryKey, $select))
-            {
-                $select[] = $primaryKey;
+            if (is_array($primaryKey)) {
+                foreach ($primaryKey as $key) {
+                    $select[] = $parentTable ? ($parentTable . '.' . $key) : $key;
+                }
+            } else {
+                $primaryKey = $parentTable ? ($parentTable . '.' . $primaryKey) : $primaryKey;
+                if (!in_array($primaryKey, $select))
+                {
+                    $select[] = $primaryKey;
+                }
             }
         }
 
@@ -168,7 +173,7 @@ class SelectFields {
                             $foreignKey = $relation->getQualifiedForeignKeyName();
                         }
 
-                        $foreignKey = $parentTable ? ($parentTable . '.' . $foreignKey) : $foreignKey;
+                        $foreignKey = $parentTable ? ($parentTable . '.' . preg_replace('/^' . preg_quote($parentTable) . '\./', '', $foreignKey)) : $foreignKey;
 
                         if(is_a($relation, MorphTo::class))
                         {
@@ -193,9 +198,11 @@ class SelectFields {
                             }
                         }
                         // If 'HasMany', then add it in the 'with'
-                        elseif(is_a($relation, HasMany::class) || is_a($relation, MorphMany::class) || is_a($relation, HasOne::class))
+                        elseif((is_a($relation, HasMany::class) || is_a($relation, MorphMany::class) || is_a($relation, HasOne::class))
+                            && !array_key_exists($foreignKey, $field))
                         {
-                            $foreignKey = explode('.', $foreignKey)[2];
+                            $segments = explode('.', $foreignKey);
+                            $foreignKey = end($segments);
                             if( ! array_key_exists($foreignKey, $field))
                             {
                                 $field[$foreignKey] = self::FOREIGN_KEY;
