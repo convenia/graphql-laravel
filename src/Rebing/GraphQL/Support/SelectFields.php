@@ -168,7 +168,7 @@ class SelectFields {
                             $foreignKey = $relation->getQualifiedForeignKeyName();
                         }
 
-                        $foreignKey = $parentTable ? ($parentTable . '.' . $foreignKey) : $foreignKey;
+                        $foreignKey == $parentTable ? ($parentTable . '.' . $foreignKey) : $foreignKey;
 
                         if(is_a($relation, MorphTo::class))
                         {
@@ -195,7 +195,7 @@ class SelectFields {
                         // If 'HasMany', then add it in the 'with'
                         elseif(is_a($relation, HasMany::class) || is_a($relation, MorphMany::class) || is_a($relation, HasOne::class))
                         {
-                            $foreignKey = explode('.', $foreignKey)[2];
+                            $foreignKey = explode('.', $foreignKey)[1];
                             if( ! array_key_exists($foreignKey, $field))
                             {
                                 $field[$foreignKey] = self::FOREIGN_KEY;
